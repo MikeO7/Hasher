@@ -41,7 +41,7 @@ for subdir, dirs, files in os.walk(rootdir):
 
 column_header = ['Filename','Path','MD5','SHA1','SHA224','SHA256','SHA384','SHA512']
 
-with open('hashes'+ '.csv', 'w') as csvfile:
+with open('hashes'+ '.csv', 'wb') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows([column_header])
     writer.writerows(temp_list)
