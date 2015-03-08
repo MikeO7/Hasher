@@ -31,6 +31,7 @@ print os.getcwd() #show current dir
 temp_list = []
 
 rootdir = '/Users/MikeO/Desktop/Hasher/' # Dir path
+lindir = '/home/beast/hash/'
 windir = 'C:\\Users\\timbooks\\Desktop\\HasherTestArea' # Dir path on a windows machine
 
 
