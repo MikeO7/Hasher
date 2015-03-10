@@ -1,4 +1,7 @@
-import hashlib, zlib, csv, os
+import hashlib, zlib, csv, os, sys
+
+hashFileName = str(sys.argv[1])
+toHashDirectory = str(sys.argv[2])
 
 def filename_hasher(subdir, file_name):
 	full_path = subdir + '/' + file_name
@@ -31,11 +34,12 @@ print os.getcwd() #show current dir
 temp_list = []
 
 rootdir = '/Users/MikeO/Desktop/Hasher/' # Dir path
-lindir = '/home/beast/hash/'
+lindir = '/home/beast/hash' # Linux dir 
 windir = 'C:\\Users\\timbooks\\Desktop\\HasherTestArea' # Dir path on a windows machine
 
+#toHashDirectory = windir
 
-for subdir, dirs, files in os.walk(rootdir):
+for subdir, dirs, files in os.walk(toHashDirectory):
     for file in files:
         temp_list.append(filename_hasher(subdir, file))
       

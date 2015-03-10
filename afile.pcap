@@ -1,0 +1,4 @@
+1.eth0
+2.bluetooth0 (Bluetooth adapter number 0)
+3.any (Pseudo-device that captures on all interfaces)
+4.lo
