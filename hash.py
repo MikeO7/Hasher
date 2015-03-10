@@ -1,7 +1,7 @@
 import hashlib, zlib, csv, os, sys
 
 hashFileName = str(sys.argv[1])
-toHashDirectory = str(sys.argv[2])
+directoryToHash = str(sys.argv[2])
 
 def filename_hasher(subdir, file_name):
 	full_path = subdir + '/' + file_name
@@ -39,14 +39,15 @@ windir = 'C:\\Users\\timbooks\\Desktop\\HasherTestArea' # Dir path on a windows 
 
 #toHashDirectory = windir
 
-for subdir, dirs, files in os.walk(toHashDirectory):
+for subdir, dirs, files in os.walk(directoryToHash):
     for file in files:
         temp_list.append(filename_hasher(subdir, file))
       
 
 column_header = ['Filename','Path','MD5','SHA1','SHA224','SHA256','SHA384','SHA512']
 
-with open('hashes'+ '.csv', 'wb') as csvfile:
+#with open('hashes'+ '.csv', 'wb') as csvfile:
+with open(hashFileName+ '.csv', 'wb') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows([column_header])
     writer.writerows(temp_list)
