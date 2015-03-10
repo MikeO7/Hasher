@@ -12,7 +12,7 @@ class Application (Frame):
 	lindir = '/home/beast/hash' # Linux dir 
 	windir = 'C:\\Users\\timbooks\\Desktop\\HasherTestArea' # Dir path on a windows machine
 	   
-	hashFileName = 'HashedStuff'
+	hashFileName = 'HashedStuffHERE'
 	directoryToHash = windir
 
 	
@@ -33,7 +33,7 @@ class Application (Frame):
 		
 		self.note.pack()
 		
-		self.grid()
+#		self.grid()
 		self.create_widgets()
 		self.run_tcpdstat()
 		
@@ -69,6 +69,9 @@ class Application (Frame):
 		self.found = True
 		self.f = (tkFileDialog.askopenfilename(parent=root))
 		print self.f
+		self.password.delete(0, END)
+		self.password.insert(0, self.f)
+		
 
 		
 	def get_directory(self):
