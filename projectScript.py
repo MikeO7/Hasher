@@ -22,6 +22,20 @@ class Application (Frame):
         Frame.__init__(self,master)
         self.initUI()
         
+#       self.grid()
+
+
+    def initUI(self):
+      
+        self.master.title("Simple menu")
+        
+        menubar = Menu(self.master)
+        self.master.config(menu=menubar)
+        
+        fileMenu = Menu(menubar)
+        fileMenu.add_command(label="Exit", command=self.onExit)
+        menubar.add_cascade(label="File", menu=fileMenu)
+
         self.note = Notebook(self.master)
         
         self.tab1 = Frame(self.note)
@@ -37,20 +51,6 @@ class Application (Frame):
         self.create_tab3()
         
         self.note.pack()
-        
-#       self.grid()
-
-
-    def initUI(self):
-      
-        self.master.title("Simple menu")
-        
-        menubar = Menu(self.master)
-        self.master.config(menu=menubar)
-        
-        fileMenu = Menu(menubar)
-        fileMenu.add_command(label="Exit", command=self.onExit)
-        menubar.add_cascade(label="File", menu=fileMenu)
 
 
     def create_tab1(self):
